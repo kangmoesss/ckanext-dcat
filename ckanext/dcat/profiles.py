@@ -992,6 +992,7 @@ class EuropeanDCATAPProfile(RDFProfile):
                 ('title', DCT.title),
                 ('notes', DCT.description),
                 ('url', DCAT.landingPage),
+                ('private', DCT.private),
                 ('version', OWL.versionInfo),
                 ):
             value = self._object_value(dataset_ref, predicate)
@@ -1210,6 +1211,7 @@ class EuropeanDCATAPProfile(RDFProfile):
             ('title', DCT.title, None, Literal),
             ('notes', DCT.description, None, Literal),
             ('url', DCAT.landingPage, None, URIRef),
+            ('private', DCT.private, None, URIRef),
             ('identifier', DCT.identifier, ['guid', 'id'], URIRefOrLiteral),
             ('version', OWL.versionInfo, ['dcat_version'], Literal),
             ('version_notes', ADMS.versionNotes, None, Literal),
