@@ -11,6 +11,7 @@ def dcat_to_ckan(dcat_dict):
     package_dict['title'] = dcat_dict.get('title')
     package_dict['notes'] = dcat_dict.get('description')
     package_dict['url'] = dcat_dict.get('landingPage')
+    package_dict['private'] = dcat_dict.get('private')
 
 
     package_dict['tags'] = []
@@ -61,6 +62,7 @@ def ckan_to_dcat(package_dict):
     dcat_dict['title'] = package_dict.get('title')
     dcat_dict['description'] = package_dict.get('notes')
     dcat_dict['landingPage'] = package_dict.get('url')
+    dcat_dict['private'] = package_dict.get('private')
 
 
     dcat_dict['keyword'] = []
