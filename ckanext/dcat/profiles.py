@@ -1033,6 +1033,8 @@ class EuropeanDCATAPProfile(RDFProfile):
                 ('language', DCT.language),
                 ('theme', DCAT.theme),
                 ('alternate_identifier', ADMS.identifier),
+                ('kategori', DCAT.kategori),
+                ('prioritas_tahun', DCAT.prioritas_tahun),
                 ('conforms_to', DCT.conformsTo),
                 ('documentation', FOAF.page),
                 ('related_resource', DCT.relation),
@@ -1237,6 +1239,8 @@ class EuropeanDCATAPProfile(RDFProfile):
         items = [
             ('language', DCT.language, None, URIRefOrLiteral),
             ('theme', DCAT.theme, None, URIRef),
+            ('kategori', DCAT.kategori, None, URIRef),
+            ('prioritas_tahun', DCAT.prioritas_tahun, None, URIRef),
             ('conforms_to', DCT.conformsTo, None, Literal),
             ('alternate_identifier', ADMS.identifier, None, URIRefOrLiteral),
             ('documentation', FOAF.page, None, URIRefOrLiteral),
