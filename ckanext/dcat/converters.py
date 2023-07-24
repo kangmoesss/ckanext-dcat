@@ -88,6 +88,12 @@ def ckan_to_dcat(package_dict):
         elif extra['key'] == 'guid':
             dcat_dict['identifier'] = extra['value']
 
+        elif extra['key'] == 'kategori':
+            dcat_dict['kategori'] = extra['value']
+
+        elif extra['key'] == 'prioritas_tahun':
+            dcat_dict['prioritas_tahun'] = extra['value']
+
     if not dcat_dict['publisher'].get('name') and package_dict.get('maintainer'):
         dcat_dict['publisher']['name'] = package_dict.get('maintainer')
         if package_dict.get('maintainer_email'):
