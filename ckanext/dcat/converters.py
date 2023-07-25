@@ -24,6 +24,10 @@ def dcat_to_ckan(dcat_dict):
 
     package_dict['extras'].append({'key': 'guid', 'value': dcat_dict.get('identifier')})
 
+    package_dict['extras'].append({'key': 'kategori', 'value': dcat_dict.get('kategori')})
+
+    package_dict['extras'].append({'key': 'prioritas_tahun', 'value': dcat_dict.get('prioritas_tahun')})
+
     dcat_publisher = dcat_dict.get('publisher')
     if isinstance(dcat_publisher, basestring):
         package_dict['extras'].append({'key': 'dcat_publisher_name', 'value': dcat_publisher})
