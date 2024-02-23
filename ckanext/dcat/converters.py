@@ -28,6 +28,8 @@ def dcat_to_ckan(dcat_dict):
 
     package_dict['extras'].append({'key': 'prioritas_tahun', 'value': dcat_dict.get('prioritas_tahun')})
 
+    package_dict['extras'].append({'key': 'accessRights', 'value': dcat_dict.get('accessRights')})
+
     dcat_publisher = dcat_dict.get('publisher')
     if isinstance(dcat_publisher, basestring):
         package_dict['extras'].append({'key': 'dcat_publisher_name', 'value': dcat_publisher})
@@ -97,6 +99,9 @@ def ckan_to_dcat(package_dict):
 
         elif extra['key'] == 'prioritas_tahun':
             dcat_dict['prioritas_tahun'] = extra['value']
+
+        elif extra['key'] == 'accessRights':
+            dcat_dict['accessRights'] = extra['value']
 
     if not dcat_dict['publisher'].get('name') and package_dict.get('maintainer'):
         dcat_dict['publisher']['name'] = package_dict.get('maintainer')
