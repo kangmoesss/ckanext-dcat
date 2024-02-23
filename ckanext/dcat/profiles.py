@@ -1035,6 +1035,7 @@ class EuropeanDCATAPProfile(RDFProfile):
                 ('alternate_identifier', ADMS.identifier),
                 ('kategori', DCAT.kategori),
                 ('prioritas_tahun', DCAT.prioritas_tahun),
+                ('accessRights', DCAT.accessRights),
                 ('conforms_to', DCT.conformsTo),
                 ('documentation', FOAF.page),
                 ('related_resource', DCT.relation),
@@ -1092,7 +1093,7 @@ class EuropeanDCATAPProfile(RDFProfile):
         # access_rights
         access_rights = self._access_rights(dataset_ref, DCT.accessRights)
         if access_rights:
-            dataset_dict['extras'].append({'key': 'access_rights', 'value': access_rights})
+            dataset_dict['extras'].append({'key': 'accessRights', 'value': accessRights})
 
         # License
         if 'license_id' not in dataset_dict:
@@ -1218,7 +1219,7 @@ class EuropeanDCATAPProfile(RDFProfile):
             ('version', OWL.versionInfo, ['dcat_version'], Literal),
             ('version_notes', ADMS.versionNotes, None, Literal),
             ('frequency', DCT.accrualPeriodicity, None, URIRefOrLiteral),
-            ('access_rights', DCT.accessRights, None, URIRefOrLiteral),
+            ('accessRights', DCT.accessRights, None, URIRefOrLiteral),
             ('dcat_type', DCT.type, None, Literal),
             ('provenance', DCT.provenance, None, Literal),
         ]
@@ -1241,6 +1242,7 @@ class EuropeanDCATAPProfile(RDFProfile):
             ('theme', DCAT.theme, None, URIRef),
             ('kategori', DCAT.kategori, None, URIRef),
             ('prioritas_tahun', DCAT.prioritas_tahun, None, URIRef),
+            ('accessRights', DCAT.accessRights, None, URIRef),
             ('conforms_to', DCT.conformsTo, None, Literal),
             ('alternate_identifier', ADMS.identifier, None, URIRefOrLiteral),
             ('documentation', FOAF.page, None, URIRefOrLiteral),
@@ -1561,7 +1563,7 @@ class EuropeanDCATAP2Profile(EuropeanDCATAPProfile):
                                     ('title', DCT.title),
                                     ('endpoint_description', DCAT.endpointDescription),
                                     ('license', DCT.license),
-                                    ('access_rights', DCT.accessRights),
+                                    ('accessRights', DCT.accessRights),
                                     ('description', DCT.description),
                                     ):
                                 value = self._object_value(access_service, predicate)
@@ -1678,7 +1680,7 @@ class EuropeanDCATAP2Profile(EuropeanDCATAPProfile):
                     items = [
                         ('availability', DCATAP.availability, None, URIRefOrLiteral),
                         ('license', DCT.license, None, URIRefOrLiteral),
-                        ('access_rights', DCT.accessRights, None, URIRefOrLiteral),
+                        ('accessRights', DCT.accessRights, None, URIRefOrLiteral),
                         ('title', DCT.title, None, Literal),
                         ('endpoint_description', DCAT.endpointDescription, None, Literal),
                         ('description', DCT.description, None, Literal),
